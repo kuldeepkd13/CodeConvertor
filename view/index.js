@@ -70,7 +70,7 @@ function toggleOutputLoader(show) {
 }
 
 async function convertCodeToLanguage(inputCode, targetLanguage) {
-    const url = 'http://localhost:3001/chatgpt/convert-code';
+    const url = 'https://codeconvertor.onrender.com/chatgpt/convert-code';
     const data = {
         inputCode: inputCode,
         targetLanguage: targetLanguage
@@ -94,7 +94,7 @@ async function convertCodeToLanguage(inputCode, targetLanguage) {
 }
 
 async function DebugCode(inputCode) {
-    const url = 'http://localhost:3001/chatgpt/debug-code';
+    const url = 'https://codeconvertor.onrender.com/chatgpt/debug-code';
     const data = {
         inputCode: inputCode,
     };
@@ -116,7 +116,7 @@ async function DebugCode(inputCode) {
     }
 }
 async function QualityCode(inputCode) {
-    const url = 'http://localhost:3001/chatgpt/Quality-code';
+    const url = 'https://codeconvertor.onrender.com/chatgpt/Quality-code';
     const data = {
         inputCode: inputCode,
     };
