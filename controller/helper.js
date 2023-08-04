@@ -51,7 +51,7 @@ async function DebugCode(inputCode) {
     }
 }
 async function QualityCode(inputCode) {
-    const prompt = `Provide the Quality of the code:\n${inputCode} :\n the paramater it should check are the Code Consistency , Code Performance , Error Handling , Code Complexcity provide the percantege and little details if there is error in code provide the error`;
+    const prompt = `Provide the Quality of the code:\n${inputCode} :\n the paramater it should check are the Code Consistency , Code Performance , Error Handling , Code Complexcity provide the percantege and details`;
 
     try {
         const response = await axios.post(

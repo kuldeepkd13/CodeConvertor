@@ -19,33 +19,56 @@ convertBtn.addEventListener('click', async () => {
     const selectedLanguage = languageSelect.value;
 
     try {
+        toggleOutputLoader(true); // Show the loading spinner
         const convertedCode = await convertCodeToLanguage(code, selectedLanguage);
         output.textContent = `Converted code in ${selectedLanguage}:\n${convertedCode}`;
     } catch (error) {
         output.textContent = 'Error converting code.';
         console.error('Error generating code conversion:', error.message);
+    } finally {
+        toggleOutputLoader(false); // Hide the loading spinner
     }
 });
+
 debugBtn.addEventListener('click', async () => {
     const code = editor.getValue();
+    
     try {
+        toggleOutputLoader(true); // Show the loading spinner
         const convertedCode = await DebugCode(code);
         output.textContent = `Debugging...:\n${convertedCode}`;
     } catch (error) {
         output.textContent = 'Error converting code.';
         console.error('Error generating code conversion:', error.message);
+    } finally {
+        toggleOutputLoader(false); // Hide the loading spinner
     }
 });
+
 qualityBtn.addEventListener('click', async () => {
     const code = editor.getValue();
+
     try {
+        toggleOutputLoader(true); // Show the loading spinner
         const convertedCode = await QualityCode(code);
         output.textContent = `Checking code quality...:\n${convertedCode}`;
     } catch (error) {
         output.textContent = 'Error converting code.';
         console.error('Error generating code conversion:', error.message);
+    } finally {
+        toggleOutputLoader(false); // Hide the loading spinner
     }
 });
+
+function toggleOutputLoader(show) {
+    const outputLoader = document.getElementById('output-loader');
+    if (show) {
+        outputLoader.style.display = 'block';
+    } else {
+        outputLoader.style.display = 'none';
+    }
+}
+
 async function convertCodeToLanguage(inputCode, targetLanguage) {
     const url = 'http://localhost:3001/chatgpt/convert-code';
     const data = {
