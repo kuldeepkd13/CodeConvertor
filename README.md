@@ -21,4 +21,4 @@ Elite lease is developed using the following technologies:
 
 ## Project Timeline!
 
-The CodeConvertor project was completed within 5 working days
+The CodeConvertor project was completed within 1 working days
